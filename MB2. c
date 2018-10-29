@@ -16,11 +16,11 @@ int main()
     double setA[MAX],x;
     int sizeA,i;
 
-    printf("enter the length of the array(no bigger than 10):\n");
+    printf("enter the length of the array(from 7 to 10):\n");
     scanf("%d",&sizeA);
-    if(sizeA>10||sizeA<0)
+    if(sizeA>10||sizeA<6)
     {
-        printf("enter the length of the array(no bigger than 10):\n");
+        printf("enter the length of the array(from 7 to 10):\n");
         scanf("%d",&sizeA);
     }
     for(i=0;i<sizeA;i++)
@@ -40,6 +40,11 @@ int main()
     printf("\nThe complementation of setA is:\n");
     sizeC=Difference(setB,sizeB,setA,sizeA,setC);
     displaydata(sizeC,setC);
+    printf("\n");
+
+    printf("the size of the complementation of setA is:%d\n",sizeC);
+    printf("\n");
+    printf("{");
 
     printPowerSet(setC,sizeC);
 }
@@ -78,10 +83,9 @@ void printPowerSet(double setC[MAX], int sizeC)
     {
       for(j = 0; j < sizeC; j++)
        {
-          if(i & (1<<j))
-            printf("%lf", setC[j]);
+            if(i & (1<<j))
+            printf(" %lf ", setC[j]);
        }
-       printf("\n");
+       printf("}{");
     }
 }
-© 2018 GitHub, Inc.
